@@ -5,7 +5,15 @@ public abstract class User {
     private String nom;
     private String motDePasse;
     private Long numeroCompte;
-    private Famille[] famille = new Famille[1];
+
+    /*
+     * "User" et en association avec la "Famille"
+     * La multiplicité (aussi appellée "cardinalité") du côté de "Famille" est 0..1
+     * 
+     * Si l'utilisateur n'a pas de "Famille" alors l'attribut "famille" sera à "null"
+     * dans le cas contraire il y aura une référence vers "Famille"
+     */
+    private Famille famille = null;
 
     private int index = 0;
     private Playlist playlist; // L'utilisateur a une seule playlist
@@ -56,11 +64,15 @@ public abstract class User {
         this.numeroCompte = numeroCompte;
     }
 
-    public Famille[] getFamille() {
+    public Famille getFamille() {
         return famille;
     }
 
-    public void setFamille(Famille[] famille) {
+    /**
+     * Setter sur l'attribut "Famille" qui sera obligatoirement à appeler pour associer l'utilisateur à une famille
+     * --> pas de constructeur qui prend en paramètre une famille
+     */
+    public void setFamille(Famille famille) {
         this.famille = famille;
     }
 

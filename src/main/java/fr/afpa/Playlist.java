@@ -97,7 +97,11 @@ public class Playlist {
         System.out.println("Film ajouté à la playlist : " + film.getTitre());
     }
 
-    // Méthode pour afficher les 5 derniers films regardés
+    /**
+     * Méthode pour afficher les 5 derniers films regardés.
+     * 
+     * Si la playlist contient moins de 5 films, ils sont quand même affichés
+     */
     public void afficherDerniersFilms() {
         if (films.isEmpty()) { // Si la playlist est vide
             System.out.println("Aucun film n'a été regardé.");

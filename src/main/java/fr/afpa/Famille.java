@@ -7,7 +7,16 @@ public class Famille {
     private String nom;
     private User[] users = new User[5];
 
+    public Famille(Long id, String nom, User[] users) {
+        this.id = id;
+        this.nom = nom;
+        this.users = users;
+    }
 
+    public Famille(Long id, String nom) {
+        this.id = id;
+        this.nom = nom;
+    }
 
     // Méthode pour calculer une remise (exemple : 10% par défaut)
     public double calcRemise() {
@@ -57,11 +66,4 @@ public class Famille {
     public void setUsers(User[] users) {
         this.users = users;
     }
-
-    public Famille(Long id, String nom, User[] users) {
-        this.id = id;
-        this.nom = nom;
-        this.users = users;
-    }
-
 }

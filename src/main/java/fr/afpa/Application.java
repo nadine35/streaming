@@ -9,10 +9,10 @@ public class Application {
     public static void main(String[] args) {
 
         // Création de quelques films
-        Film et = new Film(1, "E.T.", LocalDate.of(1982, 6, 11), null);
-        Film ipMan = new Film(2, "Ip Man", LocalDate.of(2008, 12, 12), null);
-        Film rrr = new Film(3, "RRR", LocalDate.of(2022, 3, 25), null);
-        Film mulholland = new Film(4, "Mulholland Drive", LocalDate.of(2001, 5, 16), null);
+        Film et = new Film(1, "E.T.", LocalDate.of(1982, 6, 11));
+        Film ipMan = new Film(2, "Ip Man", LocalDate.of(2008, 12, 12));
+        Film rrr = new Film(3, "RRR", LocalDate.of(2022, 3, 25));
+        Film mulholland = new Film(4, "Mulholland Drive", LocalDate.of(2001, 5, 16));
 
         // Utilisateur Découverte (limité à 1 film dans sa playlist, 1 film par jour)
         User user1 = new UserDecouverte("Anne", "hello", 1001L);
@@ -48,7 +48,7 @@ public class Application {
         user2.ajouterFilmPlaylist(mulholland);
 
         // Création d'une famille
-        Famille famille = new Famille(1L, "La Famille Dupont", new User[5]);
+        Famille famille = new Famille(1L, "La Famille Dupont");
 
         // Ajout de membres dans la famille
         famille.ajouterMembre(user1);
@@ -65,6 +65,7 @@ public class Application {
         System.out.println("\n--- Playlist de Henri (Premium) ---");
         user2.getPlaylist().afficherDerniersFilms();
 
+        // TODO attention, ne passera jamais, tester avec un compte Premium
         // Affichage du numéro de compte pour l'utilisateur Premium
         if (user1 instanceof UserPremium) {
             ((UserPremium) user2).afficherNumeroCompte();

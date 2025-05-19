@@ -15,12 +15,12 @@ public class UserDecouverte extends User {
     // Ajoute un film à la playlist avec restriction
     @Override
     public boolean ajouterFilmPlaylist(Film film) {
-        if (getPlaylist().getFilms().size() >= 1) {
+        if (this.getPlaylist().getFilms().size() >= 1) {
             System.out.println("Compte Découverte : Un seul film est autorisé dans la playlist.");
             return false; // Si la playlist contient déjà un film, on empêche l'ajout
         }
 
-        getPlaylist().ajouterFilmPlaylist(film); // Ajoute le film à la playlist
+        this.getPlaylist().ajouterFilmPlaylist(film); // Ajoute le film à la playlist
         return true;
     }
 
